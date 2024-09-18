@@ -65,12 +65,6 @@ cron.schedule("*/5 * * * *", () => {
             console.log("server: im okay");
         }
     });
-    request(`${process.env.ML_API_URL}`, function (error: Error, response: any) {
-        if (!error && response.statusCode == 200) {
-            console.log("ml: im okay");
-        }
-    }
-    );
 });
 
 
