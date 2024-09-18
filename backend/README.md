@@ -1,10 +1,11 @@
-# Node.js Boilerplate with Mongoose and MongoDB
+# Node.js Boilerplate with PostgreSQL
 
-This is a boilerplate template for a Node.js project with a clean folder structure using Mongoose and MongoDB. The structure is organized to keep the code modular and maintainable.
+This is a boilerplate template for a Node.js project with a clean folder structure using PostgreSQL for database management. The structure is organized to keep the code modular and maintainable.
 
 ## Project Structure
 
 The project structure is as follows:
+
 ```
 project-root
 │
@@ -51,8 +52,6 @@ project-root
 
 ```
 
-
-
 ## Getting Started
 
 ### Prerequisites
@@ -60,7 +59,7 @@ project-root
 Ensure you have the following installed on your local development environment:
 
 - [Node.js](https://nodejs.org/) (v14.x or higher)
-- [MongoDB](https://www.mongodb.com/) (v4.x or higher)
+- [PostgreSQL](https://www.postgresql.org/) (v12.x or higher)
 - [Docker](https://www.docker.com/) (if you want to use Docker for development)
 
 ### Installation
@@ -86,24 +85,24 @@ Ensure you have the following installed on your local development environment:
     cp .env.example .env
     ```
 
-    Edit the `.env` file to include your MongoDB connection string and other environment-specific variables:
+    Edit the `.env` file to include your PostgreSQL connection string and other environment-specific variables:
 
     ```env
-    MONGODB_URL="YOUR MONGODB URL"
+    POSTGRES_URL="YOUR POSTGRES URL"
     NODE_ENV="dev"
     PORT=10000
     SELF_URL="http://localhost:10000/ping"
     ```
 
-4. **Run MongoDB locally:**
+4. **Run PostgreSQL locally:**
 
-    If MongoDB is not already running, start it using:
+    If PostgreSQL is not already running, start it using:
 
     ```bash
-    mongod --dbpath /path-to-your-db-data
+    pg_ctl -D /path-to-your-db-data start
     ```
 
-    Or, if you prefer using Docker, you can spin up a MongoDB container using the provided `docker-compose.yml`:
+    Or, if you prefer using Docker, you can spin up a PostgreSQL container using the provided `docker-compose.yml`:
 
     ```bash
     docker-compose up -d
@@ -127,7 +126,7 @@ Ensure you have the following installed on your local development environment:
 
 - **src/Interfaces:** This folder contains TypeScript interfaces for data models.
   
-- **src/Models:** This folder contains Mongoose schemas and models.
+- **src/Models:** This folder contains the database schemas and models.
 
 - **src/Modules:** This folder contains the application's feature modules. Each module (e.g., `user`) is organized into subfolders for `controllers`, `repositories`, `services`, and `routes`.
   
@@ -147,13 +146,12 @@ To customize this boilerplate for your own use:
 
 1. **Add new modules:**
 
-   - Use the [`@techymt/create-module`](https://www.npmjs.com/package/@techymt/create-module) package to generate new modules.
    - Define your models, controllers, services, and routes in the respective directories.
 
-2. **Modify the Mongoose models:**
+2. **Modify the PostgreSQL models:**
 
    - Update the schemas in `src/Models` to match your application's data structure.
-   - Ensure any new models are exported and used within your services.
+   - Ensure any new models are used within your services.
 
 ### Contributing
 
@@ -165,4 +163,4 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 
 ### Author
 
-- [TechyMT](https://github.com/TechyMT)
+- [TechyMT](https://github.com/techymt)
