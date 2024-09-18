@@ -26,6 +26,10 @@
 - **Application Management**: Admins can change the status of loan applications (Approved, Pending, Repaid, Rejected).
 - **Statistics**: Displays backend statistics for loan applications.
 
+### Demo
+
+[Drive Link]("https://drive.google.com/file/d/1RUrIMeFsdVa6JCwY0BOPgql2WNpIxY-h/view?usp=sharing")
+
 ## Routes
 
 ### User Routes
