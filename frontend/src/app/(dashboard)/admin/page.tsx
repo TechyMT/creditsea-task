@@ -2,11 +2,7 @@
 
 import React from "react";
 import {
-  Users,
   DollarSign,
-  Repeat,
-  PiggyBank,
-  Building,
   FileText,
 } from "lucide-react";
 import Dashboard from "@/components/Dashboard";
